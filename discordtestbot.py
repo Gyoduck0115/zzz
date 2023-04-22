@@ -1,0 +1,21 @@
+import discord
+
+intents = discord.Intents.default()
+intents.message_content = True
+
+client = discord.Client(intents=intents)
+
+token = "OTkwMTE2MzY5NDQzOTgzMzcx.Gwz7jt.lYafSbC1_EzS1gl9ujAScj_I21VSxyQesHAjCA"
+@client.event
+async def on_ready():
+    print(f'We have logged in as {client.user}')
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+
+    if message.content.startswith('$hello'):
+        await message.channel.send('Hello!')
+
+client.run(token)
