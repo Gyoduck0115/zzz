@@ -5,7 +5,7 @@ intents.message_content = True
 
 client = discord.Client(intents=intents)
 
-token = "OTkwMTE2MzY5NDQzOTgzMzcx.Gwz7jt.lYafSbC1_EzS1gl9ujAScj_I21VSxyQesHAjCA"
+token = ""
 @client.event
 async def on_ready():
     print(f'We have logged in as {client.user}')
